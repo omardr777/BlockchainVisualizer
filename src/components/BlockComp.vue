@@ -71,7 +71,6 @@
                 amount:this.amountI,
                 index:this.indexI,
                 blockTheme:'scuccess'
-                // nonce:this.block.nonce
             }
         },
         props:['blockI',"nonceI",'diffI','amountI','indexI','selected'],

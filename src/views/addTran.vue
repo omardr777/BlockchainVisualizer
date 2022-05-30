@@ -2,8 +2,6 @@
   <div class="container">
 	<h1>Create transaction</h1>
 	<p>Transfer some money to someone!</p>
-    <!-- <p>{{this.$blockchain}}</p>
-    <p>{{this.trx}}</p> -->
 	<br>
 
 	<div class="form-group">
