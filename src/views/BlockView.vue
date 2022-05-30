@@ -5,7 +5,7 @@
         </div>
         
     </div>
-    <div class="container" style="margin-top:1rem">
+    <div class="container" style="margin-top:1rem; overflow-x: auto;">
         <h1 class="h2"> Transactions inside block #{{selectedBlock}}</h1>
         <TransTable :trans="this.$blockchain.chain[selectedBlock].transactions" />
     </div>
