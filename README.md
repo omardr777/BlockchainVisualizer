@@ -1,5 +1,5 @@
 # blockchain
-
+Vue App to visualize how simple blockchain works
 ## Project setup
 ```
 npm install
