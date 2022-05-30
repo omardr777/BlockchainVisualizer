@@ -1,12 +1,11 @@
 <template>
-    <div class="container" style="overflow-x: auto;white-space: nowrap;">
+    <div class="container" style="overflow-x: auto;white-space: nowrap; margin-top:1rem;">
         <div v-for="(block,index) in this.blocks.chain" :key="index" style="display:inline-block">
             <BlockComp :blockI="block" :nonceI="block.nonce" :diffI="this.$blockchain.difficulty" :amountI="block.transactions.amount" :indexI="index" @click="selectedBlock = index" :selected="selectedBlock==index ? 'selected' : ''"/> 
         </div>
         
     </div>
-    <br>
-    <div class="container">
+    <div class="container" style="margin-top:1rem">
         <h1 class="h2"> Transactions inside block #{{selectedBlock}}</h1>
         <TransTable :trans="this.$blockchain.chain[selectedBlock].transactions" />
     </div>

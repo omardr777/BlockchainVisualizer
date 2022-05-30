@@ -5,7 +5,7 @@
     </div>
 
      <ul class="list-group list-group-flush">
-	    <li class="list-group-item">
+	    <li class="list-group-item card-header">
 	    	<span class="">Hash</span>
 	    	<br>
 	    	<div class="text-truncate" >
@@ -32,11 +32,11 @@
 	    <li class="list-group-item">
 	    	<span class="">Timestamp</span><br>
 	    	<div class="text-truncate text-muted">
-	    		<small>{{ block.timestamp }}</small>
+	    		<small>{{ new Date(block.timestamp) }}</small>
 	    	</div>
 	    </li>
 	  </ul>
-      <ul class="list-group list-group-flush" style="min-height:300px">
+      <ul class="list-group list-group-flush card-footer">
           <table class="table table-striped" v-if="block.transactions.length > 0">
             <thead>
                 <tr>
@@ -76,17 +76,6 @@
         },
         props:['blockI',"nonceI",'diffI','amountI','indexI','selected'],
         watch:{
-            // nonce:function(){
-            //     this.block.nonce = this.nonce
-            //     this.block.hash = this.block.calculateHash()
-            //     this.nonce = this.block.nonce
-            // },
-            // amount:function(){
-            //     this.block.amount = this.amount
-            //     this.block.hash = this.block.calculateHash()
-            //     this.amount = this.block.amount
-            //     console.log("AMOUNT")
-            // },
             block:{
                 handler: function () {
                     this.block.hash = this.block.calculateHash()
@@ -108,10 +97,11 @@
 </script>
 <style scoped>
 .card{
-	width: 30rem; 
+	width: 28rem; 
 	display:inline-block; 
 	margin: 0 10px 0 0;
     border: 0.5px solid black;
+    cursor: pointer;
 }
 .scuccess {
     background:rgba(43, 255, 0, 0.271)
@@ -128,4 +118,36 @@
 .selected{
     border-color: blue !important;
 }
+.card-footer{
+    height: 13rem;
+    overflow-y: auto
+}
+
+@media only screen and (max-width: 1200px){
+    .card{
+	width: 22rem; 
+    }
+    .card-footer{
+        height:9rem
+    }
+}
+@media only screen and (max-width: 600px){
+	/*Big smartphones [426px -> 600px]*/
+    .card{
+	width: 20rem; 
+    }
+    .card-footer{
+        height:9rem
+    }
+}
+@media only screen and (max-width: 425px){
+	/*Small smartphones [325px -> 425px]*/
+    .card{
+	width: 16rem; 
+    }
+    .card-footer{
+        height:6rem
+    }
+}
+
 </style>

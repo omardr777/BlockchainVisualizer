@@ -1,21 +1,12 @@
 <template>
- 
-      <navBar :blockchain="blocks"/>
-      
-
-<div class="container">
-  <!-- <p>BLOCKCHAIN${{this.$blockchain}}</p> -->
-    <br>
-    <br>
-    <br>
-
+  <div class="container" style="overflow-x:hidden">
+    <navBar :blockchain="blocks"/>
     <router-view/>
   </div>
 </template>
 
 <script>
 import navBar from "./components/navBar.vue"
-// import {Blockchain} from './blockchain'
 
 export default({
   components:{navBar,},
@@ -23,11 +14,6 @@ export default({
     return{
       blocks:[]
     } 
-  },
-  created(){
-        // this.blocks = new Blockchain()
-        console.log("\n\n\n\n",this.blockchain)
-        // this.$blockchain.minePendingTransaction('aliwallet');
   },
   watch: {
       'this.$blockchain': {
