@@ -24,7 +24,6 @@
 	    <li class="list-group-item">
 	    	<span class="">Nonce</span><br>
 	    	<div class="text-truncate text-muted">
-	    		<!-- <small>{{ block.nonce }}</small> -->
                 <input type="number" v-model="block.nonce" class="form-control">
 	    	</div>
 	    </li>
